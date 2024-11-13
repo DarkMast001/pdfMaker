@@ -1,0 +1,23 @@
+﻿<Window x:Class="pdfMaker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:pdfMaker"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Background="Lavender">
+    <Grid>
+        <TextBox x:Name="textBoxEnterHeader" HorizontalAlignment="Center" Margin="0,35,0,0" TextWrapping="Wrap" Text="Заголовок документа" VerticalAlignment="Top" Width="252" FontSize="16" TextChanged="textBoxEnterHeader_TextChanged" GotFocus="textBoxEnterHeader_GotFocus" LostFocus="textBoxEnterHeader_LostFocus"/>
+        <Button x:Name="buttonPrint" Content="Печать" HorizontalAlignment="Center" Margin="0,111,0,0" VerticalAlignment="Top" FontSize="16" Click="buttonPrint_Click"/>
+        <Grid Background="White" Margin="143,187,143,0">
+            <Label x:Name="labelHeader" Content="Заголовок документа" HorizontalAlignment="Center" Margin="0,32,0,0" VerticalAlignment="Top" FontSize="16"/>
+            <DataGrid x:Name="personsDataGrid" Margin="57,91,57,20" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Номер" Binding="{Binding Path = Number}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Фамилия" Binding="{Binding Path = LastName}" Width="*" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Имя" Binding="{Binding Path =  FirstName}" Width="*" IsReadOnly="True"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</Window>
